@@ -20,7 +20,7 @@ Settings = Config("Settings.json")
 Settings.load()
 MasterBot = TeleMaster(Settings["bot_token"])
 Bot = MasterBot.bot
-Manager = UsersManager("Data/Users", trreads = Settings["users_manager_threads"])
+Manager = UsersManager("Data/Users", threads = Settings["users_manager_threads"])
 Cacher = TeleCache()
 Cacher.set_bot(Bot)
 Cacher.set_chat_id(Settings["cacher_chat_id"])
