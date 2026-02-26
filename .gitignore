@@ -1,0 +1,6 @@
+# Python cache and virtual enviroment.
+__pycache__
+.venv
+# Data files.
+.telecache.json
+Data

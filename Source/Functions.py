@@ -1,10 +1,10 @@
 from typing import TYPE_CHECKING
 
+from telebot import TeleBot, types
+
 if TYPE_CHECKING:
 	from dublib.TelebotUtils import TeleCache, UserData
 	from dublib.Engine.Configurator import Config
-
-	from telebot import TeleBot
 
 def SendStub(config: "Config", cacher: "TeleCache", bot: "TeleBot", user: "UserData") -> int | None:
 	"""
@@ -27,7 +27,7 @@ def SendStub(config: "Config", cacher: "TeleCache", bot: "TeleBot", user: "UserD
 	if config["message"]["animation"]:
 		bot.send_animation(
 			chat_id = user.id,
-			animation = cacher.get_real_cached_file(config["message"]["animation"]),
+			animation = cacher.get_real_cached_file(config["message"]["animation"], types.InputMediaAnimation).file_id,
 			caption = "\n".join(config["message"]["text"]),
 			parse_mode = "HTML"
 		)

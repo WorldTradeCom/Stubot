@@ -1,1 +1,1 @@
-dublib[telebot]==0.24.3
+-r Source/TeleBotAdminPanel/requirements.txt
